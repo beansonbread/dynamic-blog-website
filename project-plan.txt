@@ -1,0 +1,11 @@
+create
+- users can create a new post by clicking the plus button
+
+read
+- maybe make it like a list view? kind of like instagram
+
+update
+- clicking the pen icon will allow users to edit the post
+
+delete
+- clicking the trash icon will allow users to delete the post
