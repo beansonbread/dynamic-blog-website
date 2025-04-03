@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script> 
+    <title>Document</title>
+</head>
+<body>
+   <form id="create-post">
+        <label for="title">title</label>
+        <input type="text" id="title" required>
+        <label for="content">Write something...</label>
+        <textarea id="content" required></textarea>
+        <label for="upload-image">Attach an Image</label>
+        <input id="upload-image" type="file">
+        <button type="submit">Create Post</button>
+   </form>
+   <button onclick="location.href='index.html'" type="button" id="go-back">Go back</button>
+</body>
+</html>
