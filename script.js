@@ -50,15 +50,62 @@ function loadBlogPosts() {
     const storedBlogPosts = localStorage.getItem('blogPosts');
     const blogList = document.getElementById('post-lists');
     
+    blogList.innerHTML = ''; 
+    
     if (storedBlogPosts) {
         const blogPosts = JSON.parse(storedBlogPosts);
-        blogPosts.forEach(element => {
+        blogPosts.forEach((element, index) => {
             const listItem = document.createElement('li');
             listItem.innerHTML = `
                 <h3>${element.title}</h3>
                 <p>${element.content}</p>
                 ${element.image ? `<img src="${element.image}" alt="post image" />` : ''}`;
-            blogList.appendChild(listItem); 
+            
+            
+            const editButton = document.createElement('button');
+            editButton.textContent = "Edit";
+            editButton.classList.add('edit-button');
+            editButton.onclick = function () {
+                editPost(index);
+            };
+            
+            
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = "Delete";
+            deleteButton.classList.add('delete-button');
+            deleteButton.onclick = function () {
+                deletePost(index);
+            };
+            
+            
+            listItem.appendChild(editButton);
+            listItem.appendChild(deleteButton);
+
+            
+            blogList.appendChild(listItem);
         });
+    }
+}
+
+function deletePost(index) {
+    let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+    blogPosts.splice(index, 1); 
+    localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+    loadBlogPosts(); 
+}
+
+function editPost(index) {
+    let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+    let post = blogPosts[index];
+
+    let newTitle = prompt("Edit title:", post.title);
+    let newContent = prompt("Edit content:", post.content);
+
+    if (newTitle !== null && newContent !== null) {
+        post.title = newTitle;
+        post.content = newContent;
+        blogPosts[index] = post;
+        localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+        loadBlogPosts(); 
     }
 }

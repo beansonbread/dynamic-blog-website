@@ -64,3 +64,9 @@ li {
 ul#post-lists li img{
     max-width: 300px;
 }
+
+.edit-button, .delete-button {
+    background-color: rgb(199, 225, 248);
+    color:rgb(70, 110, 82);
+    margin-right: 10px;
+}
