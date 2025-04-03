@@ -27,6 +27,7 @@ input, textarea {
 
 textarea {
     padding-bottom: 50px;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 button {
