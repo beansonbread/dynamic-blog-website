@@ -69,3 +69,42 @@ ul#post-lists li img{
     color:rgb(70, 110, 82);
     margin-right: 10px;
 }
+
+/* mobile */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    #post-lists li {
+        font-size: 14px;
+    }
+
+    ul#post-lists li img {
+        max-width: 70%;
+    }
+
+    button {
+        width: 40%;
+        font-size: 14px;
+    }
+}
+
+/*tablet*/
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    #post-lists li {
+        font-size: 16px;
+    }
+
+    ul#post-lists li img {
+        max-width: 70%;
+    }
+
+    button {
+        width: 40%;
+    }
+}
