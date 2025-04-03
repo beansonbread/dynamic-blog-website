@@ -10,9 +10,10 @@ form {
     background-color: cadetblue;
     padding: 20px;
     border-radius: 10px;
+    margin:50px 20% 10px;
 }
 
-label {
+label, #upload-image {
     text-align: center;
     text-transform: capitalize;
     color: aliceblue;
@@ -43,4 +44,23 @@ button {
 button:hover {
     color: rgb(0, 139, 139);
     background-color: rgb(220, 229, 241);
+}
+
+#go-back {
+    margin-top: 10px;
+}
+
+ul {
+     list-style: none;
+}
+
+li {
+    background-color:aliceblue;
+    padding: 20px;
+    margin: 10px 50px 10px 50px;
+    border-radius: 5px;
+}
+
+ul#post-lists li img{
+    max-width: 300px;
 }
